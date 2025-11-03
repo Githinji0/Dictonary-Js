@@ -29,16 +29,16 @@ function App() {
 
   return (
     <>
-      <div className="box">
+      <div  className="main-box">
         {error && <p style={{ color: "red" }}>{error}</p>}
         <div className="box2">
           <input type="text" name="" id="" placeholder="Enter word here.." onChange={(e) => setInputValue(e.target.value)} />
           <button onClick={handleSearch}>Search</button>
         </div>
 
-        <div>
+        <div className="definations-box">
           {meanings.map((meaning, index) => (
-            <div key={index}>
+            <div className="defination-content-box" key={index}>
               <h3>Part of Speech: {meaning.partOfSpeech}</h3>
               {meaning.definitions.slice(0, 3).map((def, defIndex) => (
                 <div key={defIndex}>Definition: {def.definition}</div>
